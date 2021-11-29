@@ -6,36 +6,65 @@ import {
   AngularFirestore,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { from, Observable } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs/operators';
+import { User } from './user.model';
+import { EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  
-  /* provider = new GoogleAuthProvider();
-  constructor(private afAuth: AngularFireAuth) {}
+  user: Observable<User>;
 
+  showMenu = new EventEmitter<boolean>();
+
+  provider = new GoogleAuthProvider();
   auth = getAuth();
 
-  async googleLogin() {
-    await signInWithPopup(this.auth, this.provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
+  constructor(
+    private afAuth: AngularFireAuth,
+    private db: AngularFirestore,
+    private router: Router
+  ) {
+    this.user = this.afAuth.authState.pipe(
+      switchMap((user) => {
+        if (user) {
+          return this.db.doc<User>(`users/${user.uid}`).valueChanges();
+        } else {
+          return from(null);
+        }
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+    );
+  }
+  async googleSignIn() {
+    const provider = new GoogleAuthProvider();
+    const credential = await this.afAuth.signInWithPopup(provider);
 
-        const email = error.email;
+    this.showMenu.emit(true);
 
-        const credential = GoogleAuthProvider.credentialFromError(error);
-      }); 
+    console.log(credential.user);
+    this.router.navigate(['/home']);
+    return this.updateUserData(credential.user);
   }
 
-  logout() {
-    this.afAuth.signOut();
+  async googleSignOut() {
+    await this.afAuth.signOut();
+
+    this.showMenu.emit(false);
+    this.router.navigate(['/login']);
   }
-   */
+
+  private updateUserData(user) {
+    const userRef: AngularFirestoreDocument<User> = this.db.doc(
+      `users/${user.uid}`
+    );
+    const data = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+    };
+    return userRef.set(data, { merge: true });
+  }
 }

@@ -1,5 +1,5 @@
-import { environment } from '../environments/environment';
 import { LOCALE_ID, NgModule } from '@angular/core';
+import { environment } from '../environments/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { AuthService } from './views/login/auth.service';
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -32,12 +33,8 @@ import { HomeComponent } from './views/home/home.component';
 import { NewPersonComponent } from './components/person/new-person/new-person.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import {
-  AngularFirestoreModule,
-  AngularFirestoreCollection,
-} from '@angular/fire/compat/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { MatNativeDateModule } from '@angular/material/core';
 import { PersonReadComponent } from './components/person/person-read/person-read.component';
 
@@ -45,6 +42,9 @@ import { MatTableModule } from '@angular/material/table';
 import { LoginComponent } from './views/login/login.component';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase/app';
+
+firebase.initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [
@@ -56,7 +56,6 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     NewPersonComponent,
     PersonReadComponent,
     LoginComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -89,6 +88,9 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     {
       provide: LOCALE_ID,
       useValue: 'pt-BR',
+    },
+    {
+      provide: AuthService,
     },
   ],
   bootstrap: [AppComponent],

@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -9,10 +10,24 @@
   align-items: center;
 }
 
-.material-icons {
-  padding: 1rem 1.5rem 1rem 1.5rem;
-}
 .title-group {
   display: flex;
   margin-left: 15%;
+}
+
+.exit-button {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+  width: 7rem;
+}
+.exit-button:hover {
+  opacity: 0.8;
+  background-color: rgb(109, 109, 255);
+}
+.material-icons {
+  margin-right: 1rem;
+  margin-left: 1rem;
 }

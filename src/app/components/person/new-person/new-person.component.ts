@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
-import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 
 @Component({
@@ -83,7 +78,7 @@ export class NewPersonComponent implements OnInit {
       this.router.navigate(['person']);
     } else {
       this.submitted = false;
-      this.personService.showMessage('Preencha todos os campos corretamente!');;
+      this.personService.showMessage('Preencha todos os campos corretamente!');
     }
   }
 

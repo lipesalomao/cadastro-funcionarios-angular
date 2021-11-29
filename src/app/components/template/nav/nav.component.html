@@ -7,24 +7,17 @@
     fixedTopGap="64"
   >
     <mat-nav-list class="nav-list">
-      <a mat-list-item routerLink='home'>
+      <a mat-list-item routerLink="home">
         <i class="material-icons"> home </i>
         Início
       </a>
-      <a mat-list-item routerLink='/person'>
+      <a mat-list-item routerLink="/person">
         <i class="material-icons"> people </i>
         Funcionários
       </a>
-      
-<!--       <a mat-list-item routerLink='/login'>
-        <i class="material-icons"> exit_to_app </i>
-        Sair
-      </a> -->
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="content">
-
     <router-outlet></router-outlet>
-
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -64,23 +64,19 @@ export class PersonService {
   }
 
   update(id: string, person: Person) {
-    return this.db
-      .collection('persons')
-      .doc(id)
-      .update({
-        name: person.name,
-        cpf: person.cpf,
-        hiredAt: person.hiredAt,
-        email: person.email,
-        isActive: person.isActive,
-        //img
-          cep: person.cep,
-          street: person.street,
-          number: person.number,
-          district: person.district,
-          city: person.city,
-          state: person.state,
-        
-      });
+    return this.db.collection('persons').doc(id).update({
+      name: person.name,
+      cpf: person.cpf,
+      hiredAt: person.hiredAt,
+      email: person.email,
+      isActive: person.isActive,
+      //img
+      cep: person.cep,
+      street: person.street,
+      number: person.number,
+      district: person.district,
+      city: person.city,
+      state: person.state,
+    });
   }
 }

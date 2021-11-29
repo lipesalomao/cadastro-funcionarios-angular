@@ -26,7 +26,7 @@ export class PersonReadComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.persons = this.personService.read();
   }
-  
+
   navigateToNewPerson(): void {
     this.router.navigate(['person/new']);
   }

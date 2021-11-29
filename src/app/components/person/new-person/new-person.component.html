@@ -1,5 +1,7 @@
 <mat-card class="mat-elevation-z4">
-  <mat-card-title class="title">{{id ? 'Editar cadastro de funcionário.' : 'Cadastrar novo funcionário.'}}</mat-card-title>
+  <mat-card-title class="title">{{
+    id ? "Editar cadastro de funcionário." : "Cadastrar novo funcionário."
+  }}</mat-card-title>
   <div class="card">
     <form class="needs_validation form-control" novalidate [formGroup]="form">
       <div class="name-email">
@@ -79,13 +81,11 @@
             {{ form.value.isActive ? "Ativo" : "Inativo" }}
           </mat-slide-toggle>
 
-        <!-- <mat-form-field>
+          <!-- <mat-form-field>
           <ngx-mat-file-input formControlName="basicfile" placeholder="Basic Input" ></ngx-mat-file-input>
           <mat-icon matSuffix>folder</mat-icon>
         </mat-form-field> -->
         </div>
-
-      
       </div>
 
       <!-- ENDEREÇO-->

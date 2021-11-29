@@ -1,4 +1,4 @@
-<button mat-raised-button (click)='navigateToNewPerson()' color='primary'>
+<button mat-raised-button (click)="navigateToNewPerson()" color="primary" class="navigate">
   Novo Funcionário
 </button>
 
@@ -18,7 +18,9 @@
 
     <ng-container matColumnDef="hiredAt">
       <th mat-header-cell *matHeaderCellDef>Contratado em</th>
-      <td mat-cell *matCellDef="let row">{{ row.hiredAt.toDate().toLocaleDateString() }}</td>
+      <td mat-cell *matCellDef="let row">
+        {{ row.hiredAt.toDate().toLocaleDateString() }}
+      </td>
     </ng-container>
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef></th>
