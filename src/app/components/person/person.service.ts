@@ -74,14 +74,13 @@ export class PersonService {
         email: person.email,
         isActive: person.isActive,
         //img
-        address: {
           cep: person.cep,
           street: person.street,
           number: person.number,
           district: person.district,
           city: person.city,
           state: person.state,
-        },
+        
       });
   }
 }
