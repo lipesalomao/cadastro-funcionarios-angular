@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NewPersonComponent } from './components/person/new-person/new-person.component';
+import { PersonReadComponent } from './components/person/person-read/person-read.component';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
-import { PersonCrudComponent } from './views/person-crud/person-crud.component';
+
 
 const routes: Routes = [{
   path: 'home', 
@@ -15,7 +16,7 @@ const routes: Routes = [{
 },
 {
   path: 'person',
-  component: PersonCrudComponent
+  component: PersonReadComponent
 },
 {
   path: 'person/new',

@@ -29,7 +29,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
-import { PersonCrudComponent } from './views/person-crud/person-crud.component';
 import { NewPersonComponent } from './components/person/new-person/new-person.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
@@ -54,7 +53,6 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    PersonCrudComponent,
     NewPersonComponent,
     PersonReadComponent,
     LoginComponent,

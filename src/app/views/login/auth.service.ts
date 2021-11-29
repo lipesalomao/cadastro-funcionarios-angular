@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   
- /*  provider = new GoogleAuthProvider();
+  /* provider = new GoogleAuthProvider();
   constructor(private afAuth: AngularFireAuth) {}
 
   auth = getAuth();
@@ -36,6 +36,6 @@ export class AuthService {
 
   logout() {
     this.afAuth.signOut();
-  } */
-  
+  }
+   */
 }
