@@ -1,0 +1,20 @@
+p a {
+  padding-right: 0.6rem;
+  opacity: 0.6;
+}
+p a:hover {
+  opacity: 1;
+}
+
+p img {
+  vertical-align: middle;
+  max-width: 1.5rem;
+}
+
+.footer {
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  max-height: 3rem;
+  background-color: rgb(212, 212, 212);
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cadastro-funcionarios-angular": {
+      "hosting": {
+        "cadastro-funcionarios": [
+          "cadastro-funcionarios-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cadastro-funcionarios-angular"
+  }
+}

@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+  justify-content: space-between;
+}
+i {
+  margin-right: 0.5rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+i:hover {
+  opacity: 1;
+}
+i.edit {
+  color: green;
+}
+
+i.delete {
+  color: red;
+}
+tr:hover {
+  background-color: #f1f1f1;
+}

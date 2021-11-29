@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+
+.material-icons {
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+.title-group {
+  display: flex;
+  margin-left: 15%;
+}
