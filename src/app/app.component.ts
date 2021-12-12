@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { AuthService } from './views/login/auth.service';
 
@@ -15,6 +16,7 @@ export class AppComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
+
     this.authService.showMenu.subscribe((show) => (this.showMenu = show));
 
     if (!this.showMenu) {

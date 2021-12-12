@@ -1,13 +1,23 @@
 <mat-toolbar class="header mat-elevation-z6" color="primary">
   <div class="title-group">
     <a>
-      <h1>Cadastro de Funcionários</h1>
+      <h1>Cadastro de Funcionários </h1>
     </a>
   </div>
-  <div class="exit-button" (click)="signOut()">
-    <a mat-list-item>
-      <i class="material-icons" > exit_to_app </i>
-    </a>
-      <p>Sair</p>
+  <div class="userData">
+    <div class="userName">
+    <h3>
+      {{userName}}
+    </h3>
+      <div class="exit-button" >
+        <a mat-list-item (click)="signOut()">
+          <i class="material-icons" > exit_to_app </i>
+        </a>
+          <p (click)="signOut()">Sair</p>
+      </div>
+    </div>
+    <div class="userPhoto">
+      <img src={{userPhoto}}>
+    </div>
   </div>
 </mat-toolbar>

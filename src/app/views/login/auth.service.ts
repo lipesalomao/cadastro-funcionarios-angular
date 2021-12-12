@@ -43,7 +43,7 @@ export class AuthService {
 
     this.showMenu.emit(true);
 
-    console.log(credential.user);
+    //console.log(credential.user);
     this.router.navigate(['/home']);
     return this.updateUserData(credential.user);
   }

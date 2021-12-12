@@ -32,17 +32,17 @@ export class NewPersonComponent implements OnInit {
       .subscribe((person) => this.updateForm(person));
 
     this.form = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      cpf: [null, [Validators.required]],
+      name: ['', [Validators.required ]],
+      cpf: [null, [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
       hiredAt: [new Date(), [Validators.required]],
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       isActive: [true, [Validators.required]],
-      cep: [null, [Validators.required]],
-      street: ['', [Validators.required]],
-      number: [null, [Validators.required]],
-      district: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      state: ['', [Validators.required]],
+      cep: [null, [Validators.required,Validators.minLength(8), Validators.maxLength(8)]],
+      street: ['', [Validators.required, Validators.minLength(2)]],
+      number: [null, [Validators.required, Validators.minLength(1), Validators.maxLength(4)]],
+      district: ['', [Validators.required, Validators.minLength(3)]],
+      city: ['', [Validators.required, Validators.minLength(3)]],
+      state: ['', [Validators.required, Validators.maxLength(2), Validators.minLength(2)]],
     });
   }
   updateForm(person) {

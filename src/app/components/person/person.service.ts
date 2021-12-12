@@ -15,7 +15,7 @@ export class PersonService {
 
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'x', {
-      duration: 2000,
+      duration: 3000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
     });

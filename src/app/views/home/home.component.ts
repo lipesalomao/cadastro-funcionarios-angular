@@ -11,7 +11,7 @@ import { User } from '../login/user.model';
 export class HomeComponent implements OnInit {
   constructor(private authService: AuthService) {}
   user: User;
-  username: string = user.name;
+  userName = this.authService.auth.currentUser.displayName
 
   ngOnInit(): void {}
 }

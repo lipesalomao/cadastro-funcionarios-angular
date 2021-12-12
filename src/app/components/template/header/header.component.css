@@ -4,12 +4,6 @@
   align-items: center;
 }
 
-.header a {
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-}
-
 .title-group {
   display: flex;
   margin-left: 15%;
@@ -19,15 +13,33 @@
   color: #fff;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  font-weight: 200;
+  font-size: 1rem;
+}
+.exit-button p {
   cursor: pointer;
-  height: 100%;
-  width: 7rem;
 }
-.exit-button:hover {
-  opacity: 0.8;
-  background-color: rgb(109, 109, 255);
-}
+
 .material-icons {
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-right: 0.6rem;
+  cursor: pointer;
+}
+
+.userData {
+  display: flex;
+  height: 100%;
+}
+
+.userName h3 {
+  align-items: center;
+  font-weight: 300;
+}
+
+.userPhoto img {
+  width: 3.7rem;
+  height: 3.7rem;
+  border-radius: 50%;
+  margin: 0 1rem 0 1rem;
+  border: 2px solid rgb(118, 168, 243);
 }
