@@ -1,3 +1,7 @@
+mat-card {
+  max-width: 90%;
+  max-height: 90%;
+}
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -21,6 +25,7 @@ form {
   display: flex;
   flex-direction: column;
   align-self: center;
+  border-radius: 3px;
 }
 .name-email {
   display: flex;
@@ -36,7 +41,7 @@ form {
   position: fixed;
   margin: 1rem;
   bottom: 40px;
-  right: 20px;
+  right: 0px;
 }
 .buttons button {
   margin: 0.5rem;
