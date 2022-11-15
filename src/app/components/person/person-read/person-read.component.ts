@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./person-read.component.css'],
 })
 export class PersonReadComponent implements OnInit {
+  
   person: Person;
 
   persons: Observable<Person[]>;

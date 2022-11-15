@@ -1,3 +1,6 @@
+.container {
+  height: 1;
+}
 .sidenav {
   width: 12rem;
   background-color: #0277bd;
@@ -13,4 +16,11 @@
 .content {
   background-color: #fff;
   padding: 1rem;
+}
+.toggle-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: brown;
 }

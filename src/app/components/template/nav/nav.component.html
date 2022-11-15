@@ -1,12 +1,5 @@
-<mat-sidenav-container class="container">
-  <mat-sidenav
-    class="sidenav"
-    mode="side"
-    opened
-    fixedInViewport="true"
-    fixedTopGap="64"
-    fixedBottomGap="48"
-  >
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side" opened fixedInViewport="true">
     <mat-nav-list class="nav-list">
       <a mat-list-item routerLink="home">
         <i class="material-icons"> home </i>
@@ -17,8 +10,16 @@
         Funcionários
       </a>
     </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content class="content">
+  </mat-drawer>
+
+  <mat-drawer-content class="content">
     <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </mat-drawer-content>
+  
+</mat-drawer-container>
+
+<div class='toggle-button'>
+  <button type="button" mat-button (click)="drawer.toggle()">
+    <p>></p>
+  </button>
+</div>

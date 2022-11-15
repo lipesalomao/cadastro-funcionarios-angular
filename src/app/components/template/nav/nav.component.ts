@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/views/login/auth.service';
+
+
 
 @Component({
   selector: 'app-nav',
@@ -9,6 +10,8 @@ import { AuthService } from 'src/app/views/login/auth.service';
 })
 export class NavComponent implements OnInit {
   constructor(private router: Router) {}
+
+  @ViewChild('drawer') drawer: any;
 
   ngOnInit(): void {}
 
